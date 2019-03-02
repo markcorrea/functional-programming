@@ -3,16 +3,17 @@ const staircase = n => {
   let verticalCounter = n
 
   function drawLine(number) {
-    let horizontalCounter = 0
+    let horizontalCounter = 1
     let lineDrawing = ''
     while (horizontalCounter <= n) {
-      lineDrawing += horizontalCounter < number ? ' ' : '# '
+      lineDrawing += horizontalCounter < number ? ' ' : '#'
       horizontalCounter++
     }
-    myString += lineDrawing + ' \n'
+    myString += lineDrawing
   }
 
-  while (verticalCounter >= 0) {
+  while (verticalCounter > 0) {
+    if(verticalCounter < n) myString += '\n'
     drawLine(verticalCounter)
     verticalCounter--
   }
