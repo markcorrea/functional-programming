@@ -1,4 +1,4 @@
-function miniMaxSum(arr) {
+const miniMaxSum = (arr) => {
   let minimal = 0
   let maximal = 0
 
