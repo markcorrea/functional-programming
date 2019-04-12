@@ -1,9 +1,8 @@
-const birthdayCakeCandles = (ar) => {
-
+const birthdayCakeCandles = ar => {
   const tallestNumber = Math.max(...ar)
   let tallestCount = 0
 
-  ar.map(item => item == tallestNumber ? tallestCount++ : '')
+  ar.map(item => (item == tallestNumber ? tallestCount++ : ''))
 
   return tallestCount
 }
