@@ -1,21 +1,35 @@
 const kangaroo = (x1, v1, x2, v2) => {
-  
-  let position1 = x1
-  let position2 = x2
-  let distance = calculateDistance(x1,x2)
+  let front
+  let vFront
+  let back
+  let vBack
+  if (x1 > x2) {
+    front = x1
+    vFront = v1
+    back = x2
+    vBack = v2
+  }
+  if (x1 < x2) {
+    back = x1
+    vBack = v1
+    front = x2
+    vFront = v2
+  }
+  if (x1 == x2) return 'YES'
+
+  let distance = front - back
 
   while (distance > 0) {
-    const newPosition1 = position1 + v1
-    const newPosition2 = position2 + v2
+    front += vFront
+    back += vBack
+    let newDistance = front - back
+    if (newDistance >= distance) return 'NO'
+
+    distance = newDistance
+
+    if (distance < 0) return 'NO'
+    if (distance == 0) return 'YES'
   }
-
-  const calculateDistance = (first, second) => {
-    let calcdistance = first - second
-    return calcdistance < 0 ? calcdistance*(-1) : calcdistance
-  }
-    
-
-
 }
 
-kangaroo(2, 1, 1, 2)
+console.log(kangaroo(43, 2, 70, 2))
