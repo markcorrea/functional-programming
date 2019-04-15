@@ -19,7 +19,7 @@ const kangaroo = (x1, v1, x2, v2) => {
 
   let distance = front - back
 
-  while (distance > 0) {
+  while (distance > 0) {  
     front += vFront
     back += vBack
     let newDistance = front - back
